@@ -55,5 +55,19 @@ class LsCreatePinController extends State<LsCreatePinView>
     Ok, jika alert muncul, dan kamu kembali ke halaman sebelum-nya
     Tasks ini selesai
     */
+    // 1.
+    if (pin.length >= 4) return;
+
+    // 2.
+    if (pin.length >= 4) return;
+    pin += number.toString();
+    setState(() {});
+
+    // 3.
+    if (pin.length == 4) {
+      await mainStorage.put("pin", pin);
+      await showInfoDialog("Your PIN has been created!");
+      Get.back();
+    }
   }
 }
